@@ -1,0 +1,37 @@
+package com.telusko;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class AddServlet extends HttpServlet
+{
+ 
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException//doPost method instead of service
+	{
+		int i = Integer.parseInt(req.getParameter("num1"));
+		int j = Integer.parseInt(req.getParameter("num2"));
+		
+		int k = i+j;
+		
+		PrintWriter out = res.getWriter();
+		
+		out.println("result is " + k);
+		
+	}
+//	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException//doGet method instead of service
+//	{
+//		int i = Integer.parseInt(req.getParameter("num1"));
+//		int j = Integer.parseInt(req.getParameter("num2"));
+//		
+//		int k = i+j;
+//		
+//		PrintWriter out = res.getWriter();
+//		
+//		out.println("result is " + k);
+//		
+//	}
+	//NOTE: in doget in url it show method
+}
